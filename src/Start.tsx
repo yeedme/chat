@@ -9,6 +9,12 @@ let t1 = gsap.timeline({
     duration: 1.1,
   },
 });
+let t2 = gsap.timeline({
+  defaults: {
+    ease: "power4.inOut",
+    duration: 1,
+  },
+});
 export default function Start({}: Props) {
   const [loginPageShow, setLoginPageShow] = useState<boolean>(false);
   function closeStartBlackBox() {
@@ -54,27 +60,35 @@ export default function Start({}: Props) {
   }
 
   useEffect(() => {
-    let gsct = gsap.context(() => {});
+    let gsct = gsap.context(() => {
+      t2.from('.StartTextBox',{
+        height:'0'
+      })
+      .from('.StartButtonBox',{
+        y:'100%'
+      },'-=0.7')
+      
+    });
     return () => gsct.revert();
   }, []);
 
   return (
     <>
-      <div className="w-full h-full relative flex flex-col justify-between">
+      <div className="w-full h-full relative flex flex-col justify-between overflow-hidden">
         {/* login组件 */}
         <div className="absolute hidden overflow-hidden loginPageShow">
           {loginPageShow ? <Login /> : ""}
         </div>
         {/* logo */}
-        <div className="w-full md:h-96 h-72 bg-slate-700 startBlackBox md:rounded-b-5xl rounded-b-4xl relative flex justify-center">
+        <div className="w-full md:h-96 h-72 bg-slate-700  md:rounded-b-5xl rounded-b-4xl relative flex justify-center startBlackBox">
           <div className="md:w-56 md:h-56 w-44 h-44 rounded-full bg-slate-100 absolute top-1/2 flex justify-center items-center md:text-3xl text-2xl startWhiteLogo">
-            CCCC
+
             <br />
-            chat
+            Czay - chat
           </div>
         </div>
         {/* 标语 */}
-        <div className=" flex flex-col items-center StartTextBox overflow-hidden ">
+        <div className=" flex flex-col items-center overflow-hidden  StartTextBox ">
           <h2 className="text-3xl  font-semibold my-2 shrink-0">
             来自github.yeedme打造
           </h2>
