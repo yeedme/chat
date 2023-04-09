@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import Login from "./pages/Login";
+import Login from "../pages/Login";
 type Props = {};
 let t1 = gsap.timeline({
   defaults: {
@@ -51,7 +50,7 @@ export default function Start({}: Props) {
         "-=1.1"
       )
       .from(".loginPageShow", {
-        x: "-100%",
+        y: "100%",
       })
       //动画执行完在 展示login组件 从而触发login组件初始渲染动画
       .eventCallback("onComplete", () => {
@@ -61,13 +60,15 @@ export default function Start({}: Props) {
 
   useEffect(() => {
     let gsct = gsap.context(() => {
-      t2.from('.StartTextBox',{
-        height:'0'
-      })
-      .from('.StartButtonBox',{
-        y:'100%'
-      },'-=0.7')
-      
+      t2.from(".StartTextBox", {
+        height: "0",
+      }).from(
+        ".StartButtonBox",
+        {
+          y: "100%",
+        },
+        "-=0.7"
+      );
     });
     return () => gsct.revert();
   }, []);
@@ -77,12 +78,11 @@ export default function Start({}: Props) {
       <div className="w-full h-full relative flex flex-col justify-between overflow-hidden">
         {/* login组件 */}
         <div className="absolute hidden overflow-hidden loginPageShow">
-          {loginPageShow ? <Login /> : ""}
+          {loginPageShow ? <Login /> : <Login />}
         </div>
         {/* logo */}
         <div className="w-full md:h-96 h-72 bg-slate-700  md:rounded-b-5xl rounded-b-4xl relative flex justify-center startBlackBox">
           <div className="md:w-56 md:h-56 w-44 h-44 rounded-full bg-slate-100 absolute top-1/2 flex justify-center items-center md:text-3xl text-2xl startWhiteLogo">
-
             <br />
             Czay - chat
           </div>
@@ -97,7 +97,7 @@ export default function Start({}: Props) {
         {/* 动画触发按钮 */}
         <div className="w-screen h-auto flex flex-col items-center pb-4 StartButtonBox">
           <button
-            className="w-72 h-24 bg-emerald-200 rounded-3xl font-semibold text-2xl"
+            className="w-72 h-24 bg-lime-300 rounded-3xl font-semibold text-2xl"
             onClick={closeStartBlackBox}
           >
             免费使用
