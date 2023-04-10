@@ -78,7 +78,7 @@ export default function Login() {
 
   const handlePasswordChange = (value: string) => {
     setPassword(value);
-    if (passwordLength >= 6) {
+    if (passwordLength >= 5) {
       setButtonAble(true);
     } else {
       setButtonAble(false);
@@ -89,7 +89,10 @@ export default function Login() {
   };
   useEffect(()=>{
     setPassword('123456');
+
     setUsername('yeedme@github.com');
+  
+    setButtonAble(true);
   },[])
   return (
     <>
