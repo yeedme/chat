@@ -4,6 +4,7 @@
 .input{
   outline:none;
   background-color: none;
+  resize: none;
 }
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -15,4 +16,22 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 } */
+
+/* .message {
+  margin: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message__content {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 6px;
+} */
+
+
+
 

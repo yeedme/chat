@@ -4,13 +4,8 @@ interface Props {
   src: string;
   alt: string;
   size?: number;
-
 }
 function Avatar({ src, alt, size = 48 }: Props) {
-  const classNames = ["avatar"];
-
-
-
   return (
     <img
       src={src}
