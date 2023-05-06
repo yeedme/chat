@@ -12,7 +12,7 @@ const useClickOutside = ( Ref: React.RefObject<HTMLDivElement> , handler: () => 
     }
     return;
   };
-  console.log("useClickOutside active");
+  
 
   useEffect(() => {
     document.addEventListener("mousedown", onClickListner);

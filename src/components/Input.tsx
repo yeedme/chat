@@ -1,7 +1,7 @@
 import React from "react";
 //封装一个input组件
 interface InputProps {
-  value: string;
+  value?: string;
   type: "text" | "password" | "email" | "number";
   placeholder: string;
   onChange: (value: string) => void;
@@ -10,7 +10,7 @@ interface InputProps {
   pattern?:any
 }
 
-export default function Input({value,type,placeholder,onChange,className = "",disabled = false,pattern}: InputProps) {
+export default function Input({value,type,placeholder="",onChange,className = "",disabled = false,pattern}: InputProps) {
     
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const filteredValue = event.target.value.replace(pattern, "");

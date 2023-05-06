@@ -5,8 +5,8 @@ type Props = {};
 export default function Nav({}: Props) {
   return (
     <>
-      <div className="md:w-16 md:h-screen bg-black w-screen h-16  flex md:block justify-around shrink-0">
-        <div className="w-full h-16 bg-blue-100 my-2 md:block hidden shrink-0" />
+      <div className="w-full h-full flex flex-col bg-black p-2">
+        <div className="w-full h-12 bg-blue-100 md:block hidden shrink-0" />
         <div className="md:w-full w-16 h-16 md:my-2 cursor-pointer" >         
           <svg
             viewBox="0 0 1024 1024"

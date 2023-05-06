@@ -17,8 +17,12 @@ export default {
       // Simple 8 row grid
 
       // Complex site-specific row configuration
-      'pcLayout': '60px 1fr 100px',
-    }
+      'pcChatLayout': '60px 1fr 150px',
+     
+    },
+    gridTemplateColumns: {
+      'pcLayout':'70px 350px 1fr'
+    },
   
   },
   plugins: [],

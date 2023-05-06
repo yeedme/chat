@@ -6,6 +6,13 @@
   background-color: none;
   resize: none;
 }
+.triangle{
+  width: 0;
+  height: 0;
+  border-top: 7px solid rgb(49, 49, 49);
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
+}
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
